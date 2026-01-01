@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheeraz Ahmad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="profile-img" style="background-image: url('assets/image.jpeg'); background-size: cover; background-position: center;"></div>
+        
+        <h1>Sheeraz Ahmad</h1>
+        <p class="tagline">training deep neural nets</p>
+        
+        <div class="contact">
+            <a href="https://github.com/Ahmad-Sheeraz" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/msheerazahmad/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=RggbTwUAAAAJ&hl=en" target="_blank" title="Google Scholar" id="scholar-link">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="mailto:sheeraz_ahmad@outlook.com" title="Email" id="email-link">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <span id="email-note" style="display:none; position:absolute; background:#fff; color:#333; border:1px solid #ccc; border-radius:4px; padding:6px 12px; font-size:0.95rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); z-index:10;">
+                sheeraz_ahmad@outlook.com
+            </span>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const icon = document.getElementById('email-link');
+                const note = document.getElementById('email-note');
+                icon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (note.style.display === 'block') {
+                        note.style.display = 'none';
+                    } else {
+                        note.style.display = 'block';
+                        // Position the note aligned with the icon
+                        const rect = icon.getBoundingClientRect();
+                        note.style.left = (rect.right + window.scrollX + 6) + 'px'; // 6px gap
+                        note.style.top = (rect.top + window.scrollY) + 'px';
+                    }
+                });
+                document.addEventListener('click', function(e) {
+                    if (!icon.contains(e.target) && !note.contains(e.target)) {
+                        note.style.display = 'none';
+                    }
+                });
+            });
+            </script>
+        </div>
+    </div>
+
+    <div class="timeline-section">
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 2024 — Current</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/caimi.png" alt="Caimi icon" class="timeline-icon">
+                    Caimi
+                </h3>
+                <h4>AI Researcher</h4>
+                <p>My work includes deep learning model development, optimization and deployment.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Jun 2022 — Aug 2023</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/gachon.jpg" alt="Content Technology Lab icon" class="timeline-icon">
+                    Content Technology Lab
+                </h3>
+                <h4>Graduate Researcher</h4>
+                <p>Researched on deep learning models for medical imaging (endoscopy).</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 2021 — Aug 2023</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/gachon.jpg" alt="Gachon University icon" class="timeline-icon">
+                    Gachon University
+                </h3>
+                <h4>Master of Computer Engineering</h4>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 2022 — Jun 2022</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/icaremanager.png" alt="ICareManager icon" class="timeline-icon">
+                    ICareManager
+                </h3>
+                <h4>Associate Software Engineer</h4>
+                <p>I worked on a cloud-based care management and EHR platform.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Aug 2021 — Apr 2022</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/nbsolutions.jpeg" alt="NextByte Solutions icon" class="timeline-icon">
+                    NextByte Solutions
+                </h3>
+                <h4>Junior Frontend Developer</h4>
+                <p>Developed frontend for several web projects.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Nov 2016 — Nov 2020</div>
+            <div class="timeline-content">
+                <h3>
+                    <img src="assets/llu.png" alt="Lahore Leads University icon" class="timeline-icon">
+                    Lahore Leads University
+                </h3>
+                <h4>Bachelor of Software Engineering</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects-section">
+        <h2>Projects</h2>
+        
+        <div class="project-item">
+            <h3>
+                <img src="assets/featurevis-icon.svg" alt="FeatureVis icon" class="project-icon">
+                <a href="https://github.com/Ahmad-Sheeraz/featurevis" target="_blank">FeatureVis</a>
+            </h3>
+            <p>A zero-friction tool for visualizing what CNNs actually learn. Upload your model and an image—instantly explore feature maps and attributions. Helps ML practitioners quickly verify their models are learning meaningful patterns instead of exploiting dataset shortcuts.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>
+                <img src="assets/colongpt-icon.svg" alt="ColonGPT icon" class="project-icon">
+                <a href="https://github.com/Ahmad-Sheeraz/colonscope" target="_blank">ColonGPT Video Analyzer</a>
+            </h3>
+            <p>An AI-assisted colonoscopy analysis tool powered by the ColonGPT vision-language model. Clinicians can review video footage, capture frames, detect and classify polyps through natural language queries, and generate PDF reports—streamlining the diagnostic workflow.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>
+                <img src="assets/dataset-analyzer-icon.svg" alt="Dataset Analyzer icon" class="project-icon">
+                <a href="https://github.com/Ahmad-Sheeraz/Object-Recognition-Dataset-Analyzer" target="_blank">Dataset Analyzer</a>
+            </h3>
+            <p>A local-first tool for inspecting object detection datasets. Supports COCO, YOLO, and Pascal VOC formats out of the box. View class distributions, bounding box statistics, and spatial heatmaps. Browse and filter your data visually. No cloud uploads, no subscriptions—just fast insight into your training data to catch problems before they reach your model.</p>
+        </div>
+    </div>
+
+    <div class="publications-section">
+        <h2>Publications</h2>
+        
+        <div class="publication-category">
+            <h3>Journal Publications</h3>
+            <ol>
+                <li>
+                    <strong>Ahmad Sheeraz</strong>, Jae Seoung Kim, Dong Kyun Park, and Taegkeun Whangbo, "Automated Detection of Gastric Lesions in Endoscopic Images by Leveraging Attention-Based YOLOv7," <em>IEEE Access</em>. (Q2, Impact Factor: 3.9)
+                </li>
+                <li>
+                    Hannah Lee, Jun-Won Chung, Kyoung Oh Kim, Kwang An Kwon, Jung Ho Kim, Sung-Cheol Yun, Sung Woo Jung, <strong>Ahmad Sheeraz</strong>, Yeong Jun Yoon, Ji Hee Kim, and Mohd Azzam Kayasseh, "Validation of Artificial Intelligence Computer-Aided Detection of Colonic Neoplasm in Colonoscopy," <em>Diagnostics</em>. (Q1, Impact Factor: 3.0)
+                </li>
+            </ol>
+        </div>
+
+        <div class="publication-category">
+            <h3>Conference Publications</h3>
+            <ol>
+                <li>
+                    Shabir Ahmad, <strong>Ahmad Sheeraz</strong>, Sujeong Kim, Behraj Khan, Tahir Qasim Syed, and Junwon Chung, "Human-in-the-Loop Active Learning for Real-Time Endoscopic Diagnostics on Edge Devices," in <em>Proceedings of the MICCAI 2025 Workshop on MIRASOL</em>, 2025. (Accepted)
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

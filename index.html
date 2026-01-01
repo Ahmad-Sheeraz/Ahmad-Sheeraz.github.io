@@ -132,29 +132,108 @@
         <h2>Projects</h2>
         
         <div class="project-item">
-            <h3>
-                <img src="assets/featurevis-icon.svg" alt="FeatureVis icon" class="project-icon">
-                <a href="https://github.com/Ahmad-Sheeraz/featurevis" target="_blank">FeatureVis</a>
-            </h3>
-            <p>A zero-friction tool for visualizing what CNNs actually learn. Upload your model and an image—instantly explore feature maps and attributions. Helps ML practitioners quickly verify their models are learning meaningful patterns instead of exploiting dataset shortcuts.</p>
+            <div class="project-thumbnail" data-image="assets/featurevis.gif">
+                <img src="assets/featurevis.gif" alt="FeatureVis demo">
+                <div class="expand-icon">⤢</div>
+            </div>
+            <div class="project-content">
+                <h3>
+                    <!-- <img src="assets/featurevis-icon.svg" alt="FeatureVis icon" class="project-icon"> -->
+                    <a href="https://github.com/Ahmad-Sheeraz/featurevis" target="_blank">FeatureVis</a>
+                </h3>
+                <p>A zero-friction tool for visualizing what CNNs actually learn. Upload your model and an image—instantly explore feature maps and attributions. Helps ML practitioners quickly verify their models are learning meaningful patterns instead of exploiting dataset shortcuts.</p>
+                <div class="project-tags">
+                    <span class="tag">CNN Visualization</span>
+                    <span class="tag">Feature Maps</span>
+                    <span class="tag">Deep Learning</span>
+                </div>
+            </div>
         </div>
 
         <div class="project-item">
-            <h3>
-                <img src="assets/colongpt-icon.svg" alt="ColonGPT icon" class="project-icon">
-                <a href="https://github.com/Ahmad-Sheeraz/colonscope" target="_blank">ColonGPT Video Analyzer</a>
-            </h3>
-            <p>An AI-assisted colonoscopy analysis tool powered by the ColonGPT vision-language model. Clinicians can review video footage, capture frames, detect and classify polyps through natural language queries, and generate PDF reports—streamlining the diagnostic workflow.</p>
+            <div class="project-thumbnail" data-image="assets/colongpt-demo.jpg">
+                <img src="assets/colongpt-demo.jpg" alt="ColonGPT demo">
+                <div class="expand-icon">⤢</div>
+            </div>
+            <div class="project-content">
+                <h3>
+                    <!-- <img src="assets/colongpt-icon.svg" alt="ColonGPT icon" class="project-icon"> -->
+                    <a href="https://github.com/Ahmad-Sheeraz/colonscope" target="_blank">ColonGPT Video Analyzer</a>
+                </h3>
+                <p>An AI-assisted colonoscopy analysis tool powered by the ColonGPT vision-language model. Clinicians can review video footage, capture frames, detect and classify polyps through natural language queries, and generate PDF reports—streamlining the diagnostic workflow.</p>
+                <div class="project-tags">
+                    <span class="tag">Medical AI</span>
+                    <span class="tag">Vision-Language Model</span>
+                    <span class="tag">Healthcare</span>
+                </div>
+            </div>
         </div>
 
         <div class="project-item">
-            <h3>
-                <img src="assets/dataset-analyzer-icon.svg" alt="Dataset Analyzer icon" class="project-icon">
-                <a href="https://github.com/Ahmad-Sheeraz/Object-Recognition-Dataset-Analyzer" target="_blank">Dataset Analyzer</a>
-            </h3>
-            <p>A local-first tool for inspecting object detection datasets. Supports COCO, YOLO, and Pascal VOC formats out of the box. View class distributions, bounding box statistics, and spatial heatmaps. Browse and filter your data visually. No cloud uploads, no subscriptions—just fast insight into your training data to catch problems before they reach your model.</p>
+            <div class="project-thumbnail" data-image="assets/demo.gif">
+                <img src="assets/demo.gif" alt="Dataset Analyzer demo">
+                <div class="expand-icon">⤢</div>
+            </div>
+            <div class="project-content">
+                <h3>
+                    <!-- <img src="assets/dataset-analyzer-icon.svg" alt="Dataset Analyzer icon" class="project-icon"> -->
+                    <a href="https://github.com/Ahmad-Sheeraz/Object-Recognition-Dataset-Analyzer" target="_blank">Dataset Analyzer</a>
+                </h3>
+                <p>A local-first tool for inspecting object detection datasets. Supports COCO, YOLO, and Pascal VOC formats out of the box. View class distributions, bounding box statistics, and spatial heatmaps. Browse and filter your data visually. No cloud uploads, no subscriptions—just fast insight into your training data to catch problems before they reach your model.</p>
+                <div class="project-tags">
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Object Detection</span>
+                    <span class="tag">Dataset Analysis</span>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const close = document.querySelector('.close');
+            const thumbnails = document.querySelectorAll('.project-thumbnail');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const imageSrc = this.getAttribute('data-image');
+                    lightboxImg.src = imageSrc;
+                    lightbox.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            close.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 
     <div class="publications-section">
         <h2>Publications</h2>

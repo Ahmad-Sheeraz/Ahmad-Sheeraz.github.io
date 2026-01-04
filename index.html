@@ -9,7 +9,14 @@
 </head>
 <body>
     <div class="header">
-        <div class="profile-img" style="background-image: url('assets/image.jpeg'); background-size: cover; background-position: center;"></div>
+        <div class="profile-flip-container">
+            <div class="profile-flip-inner">
+                <div class="profile-img profile-front" style="background-image: url('assets/image.jpeg'); background-size: cover; background-position: center;"></div>
+                <div class="profile-img profile-back">
+                    <span class="greeting">Hi!</span>
+                </div>
+            </div>
+        </div>
         
         <h1>Sheeraz Ahmad</h1>
         <p class="tagline">training deep neural nets</p>
@@ -131,6 +138,25 @@
     <div class="projects-section">
         <h2>Projects</h2>
         
+        <div class="project-item">
+            <div class="project-thumbnail" data-image="assets/pytorch-toolkit.png">
+                <img src="assets/pytorch-toolkit.png" alt="PyTorch Deployment Toolkit demo">
+                <div class="expand-icon">⤢</div>
+            </div>
+            <div class="project-content">
+                <h3>
+                    <!-- <img src="assets/pytorch-toolkit-icon.svg" alt="PyTorch Deployment Toolkit icon" class="project-icon"> -->
+                    <a href="https://github.com/Ahmad-Sheeraz/pytorch-deployment-toolkit" target="_blank">PyTorch Deployment Toolkit</a>
+                </h3>
+                <p>A Python toolkit for deploying PyTorch models to production. Export, optimize, benchmark, and serve ML models.</p>
+                <div class="project-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Model Deployment</span>
+                    <span class="tag">MLOps</span>
+                </div>
+            </div>
+        </div>
+
         <div class="project-item">
             <div class="project-thumbnail" data-image="assets/featurevis.gif">
                 <img src="assets/featurevis.gif" alt="FeatureVis demo">
